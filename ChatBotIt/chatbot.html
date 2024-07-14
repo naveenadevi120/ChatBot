@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    
+</head>
+<body>
+    <hr>
+    <hr>
+    <center>
+        <h1>ChatBot</h1>
+    </center>
+    <hr>
+    <hr>
+
+   
+    <link rel="stylesheet" type="text/css" href="style.css">
+<div id="chatbox"></div>
+<input type="text" id="userInput" placeholder="Ask your queries?!">
+
+
+<button onclick="sendMessage()">Send</button>
+
+<script>
+    function sendMessage() {
+        var userInput = document.getElementById("userInput");
+
+
+
+        var message = userInput.value;
+
+      
+        displayMessage("Tom: " + message);
+
+        setTimeout(function () {
+            displayMessage("Chatbot: Hi, Im intelligent AI chatbot!");
+        }, 500);
+            
+       
+    
+    
+        userInput.value = '';
+    }
+
+    function displayMessage(message) {
+        var chatbox = document.getElementById("chatbox");
+        chatbox.innerHTML += '<p>' + message + '</p>';
+        
+        chatbox.scrollTop = chatbox.scrollHeight;
+    }
+</script>
+<br>
+
+
+</body>
+</html>

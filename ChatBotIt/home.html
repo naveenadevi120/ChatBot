@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AI chatbot</title>
+        
+<link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <hr>
+        <hr>
+        <center>
+            <h1>ChatBot</h1>
+        </center>
+        <hr>
+        <hr>
+
+        <div id="chatbox">
+            
+            <div class="message">Tom: Hi!</div>
+            <div class="message">Jerry: Hello?</div>
+        </div>
+
+        
+        <input type="text" id="userInput1" placeholder="User1, type your message...">
+        <button onclick="sendMessage('User1')">Send</button>
+
+        
+        <input type="text" id="userInput2" placeholder="User2, type your message...">
+        <button onclick="sendMessage('User2')">Send</button>
+
+        <script>
+            function sendMessage(user) {
+                var userInput;
+                var chatbox = document.getElementById("chatbox");
+
+                if (user === 'User1') {
+                    userInput = document.getElementById("userInput1");
+                } else {
+                    userInput = document.getElementById("userInput2");
+                }
+
+                var message = userInput.value;
+                
+               
+                chatbox.innerHTML += '<div class="message">' + user + ': ' + message + '</div>';
+                
+                
+                userInput.value = '';
+            }
+        </script>
+    </body>
+</html>
